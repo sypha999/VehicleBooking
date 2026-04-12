@@ -1,20 +1,17 @@
-export class Booking {
-    static totalBookings = 0;
+import crypto from "crypto";
 
-    constructor(bookingId, vehicle, customer) {
-        this.bookingId = bookingId;
+export class Booking {
+    #bookingId;
+
+    constructor(vehicle, customer) {
+        this.#bookingId = crypto.randomUUID();
         this.vehicle = vehicle;
         this.customer = customer;
-        Booking.totalBookings++;
     }
 
     confirmBooking() {
         console.log(
-            `Booking confirmed for ${this.customer.name} - ${this.vehicle.model}`
+            `Booking ${this.#bookingId} confirmed for ${this.customer.name} - ${this.vehicle.getModel()}`
         );
-    }
-
-    static getTotalBookings() {
-        return Booking.totalBookings;
     }
 }

@@ -1,28 +1,37 @@
 export class Vehicle {
-    static totalVehicles = 0;
+    #id;
+    #model;
+    #isAvailable;
 
     constructor(id, model) {
-        this.id = id;
-        this.model = model;
-        this.isAvailable = true;
-        Vehicle.totalVehicles++;
+        this.#id = id;
+        this.#model = model;
+        this.#isAvailable = true;
+    }
+
+    getId() {
+        return this.#id;
+    }
+
+    getModel() {
+        return this.#model;
+    }
+
+    isAvailable() {
+        return this.#isAvailable;
     }
 
     book() {
-        if (this.isAvailable) {
-            this.isAvailable = false;
-            console.log(`${this.model} booked successfully`);
-        } else {
-            console.log(`${this.model} is not available`);
+        if (!this.#isAvailable) {
+            console.log(`${this.#model} is not available`);
+            return;
         }
+        this.#isAvailable = false;
+        console.log(`${this.#model} booked successfully`);
     }
 
     returnVehicle() {
-        this.isAvailable = true;
-        console.log(`${this.model} returned`);
-    }
-
-    static getTotalVehicles() {
-        return Vehicle.totalVehicles;
+        this.#isAvailable = true;
+        console.log(`${this.#model} returned`);
     }
 }
