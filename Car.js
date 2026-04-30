@@ -1,6 +1,6 @@
-import {Vehicle} from "./Vehicle.js";
+const {Vehicle} = require("./Vehicle.js");
 
-export class Car extends Vehicle {
+ class Car extends Vehicle {
     #type;
 
     constructor(id, model, type) {
@@ -17,3 +17,7 @@ export class Car extends Vehicle {
         super.book();
     }
 }
+
+module.exports = {
+  Car
+};

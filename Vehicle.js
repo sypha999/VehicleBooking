@@ -1,4 +1,4 @@
-export class Vehicle {
+class Vehicle {
     #id;
     #model;
     #isAvailable;
@@ -35,3 +35,7 @@ export class Vehicle {
         console.log(`${this.#model} returned`);
     }
 }
+
+module.exports = {
+  Vehicle
+};

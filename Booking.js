@@ -1,6 +1,6 @@
-import crypto from "crypto";
+const  crypto = require ("crypto");
 
-export class Booking {
+class Booking {
     #bookingId;
 
     constructor(vehicle, customer) {
@@ -15,3 +15,7 @@ export class Booking {
         );
     }
 }
+
+module.exports = {
+  Booking
+};

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import {Vehicle} from "./Vehicle.js";
-import {Customer} from "./Customer.js";
-import {Booking} from "./Booking.js";
-import {Car} from "./Car.js";
-import crypto from "crypto";
+const { Vehicle } = require("./Vehicle.js");
+const { Customer } = require("./Customer.js");
+const { Booking } = require("./Booking.js");
+const { Car } = require("./Car.js");
+const crypto = require("crypto");
 
 const vehicle1 = new Vehicle("V1", "Toyota");
 const car1 = new Car(crypto.randomUUID(), "Honda Civic", "Sedan");
